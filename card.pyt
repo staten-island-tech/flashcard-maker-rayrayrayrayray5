@@ -1,3 +1,4 @@
+
 mode = input("Would you like to enter Teacher or Student Mode?")
 #Teacher Mode
 if mode == 'Teacher Mode':
@@ -8,8 +9,4 @@ if mode == 'Teacher Mode':
 #Student Mode
 if mode == 'Student Mode':
     class Student:
-
-
-
-
 
