@@ -15,11 +15,11 @@ while True:
         value = input('Input a word/phrase:')
         answer = input('Input the answer:')
         flashcards = Teacher.FlashCard(value, answer)
-        flashcards_data = [flashcards.to_dict()]
+        new_flashcard = flashcards.to_dict()
+
         try:      
             with open("FlashCards.json", "r") as file:
                 existing_data = json.load(file)
-                existing_data.extend(flashcards_data)
         except FileNotFoundError:
             existing_data = flashcards_data
         with open("FlashCards.json", "w") as file:
