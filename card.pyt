@@ -6,6 +6,7 @@ class Teacher:
         def __init__(self, value, answer):
             self.value = value
             self.answer = answer
+
         def to_dict(self):
             return{"value": self.value, "answer": self.answer,}
 flashcards_data = []
@@ -19,11 +20,16 @@ while True:
 
         try:      
             with open("FlashCards.json", "r") as file:
-                existing_data = json.load(file)
+                try:
+                    existing_data = json.load(file)
+                except json.JSONDecodeError:
+                    existing_data = []
         except FileNotFoundError:
-            existing_data = flashcards_data
+            existing_data = []
+        existing_data.append(new_flashcard)
         with open("FlashCards.json", "w") as file:
             json.dump(existing_data, file, indent=4)
+            
         x = input('Do you want to continue?')
         if x.lower() == 'no':
             break
