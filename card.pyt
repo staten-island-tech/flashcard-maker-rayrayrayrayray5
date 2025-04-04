@@ -39,5 +39,15 @@ while True:
     pass  """
 
 #Student Mode
-""" if mode == 'Student Mode':
-    class Student: """
+if mode == 'Student Mode':
+    class Student:
+        def __init__(self):
+                self.points = 0
+def flashcard_question(self, flashcard):
+    print(f'Flashcard:{flashcard['value']}')
+    answer = input('Answer:')
+    if answer.lower() == flashcard['value'].lower():
+        print('Correct, +1 point!')
+        point += 1
+    else:
+        print(f'Incorrect, the correct answer was {flashcard['value']}')
