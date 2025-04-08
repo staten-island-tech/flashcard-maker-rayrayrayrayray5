@@ -26,6 +26,7 @@ while True:
                     existing_data = []
         except FileNotFoundError:
             existing_data = []
+
         existing_data.append(new_flashcard)
         with open("FlashCards.json", "w") as file:
             json.dump(existing_data, file, indent=4)
@@ -44,10 +45,16 @@ if mode == 'Student Mode':
         def __init__(self):
                 self.points = 0
 def flashcard_question(self, flashcard):
-    print(f'Flashcard:{flashcard['value']}')
+    print(f'Flashcard:{flashcard["value"]}')
     answer = input('Answer:')
-    if answer.lower() == flashcard['value'].lower():
+    if answer.lower() == flashcard["answer"].lower():
         print('Correct, +1 point!')
-        point += 1
+        self.points += 1
     else:
-        print(f'Incorrect, the correct answer was {flashcard['value']}')
+        print(f'Incorrect, the correct answer was {flashcard["value"]}')
+
+try:
+    with open("Flashcards.json", "r") as file:
+        flashcards_list = json.load(file)
+except (FileNotFoundError, json.JSONDecodeError):
+    flashcards_list = []
