@@ -1,7 +1,7 @@
 import json
 mode = input("Would you like to enter Teacher or Student Mode?")
 #Teacher Mode
-class Teacher:
+""" class Teacher:
     class FlashCard:
         def __init__(self, value, answer):
             self.value = value
@@ -33,7 +33,7 @@ while True:
             
         x = input('Do you want to continue?')
         if x.lower() == 'no':
-            break
+            break """
 
 #Clear .json
 """ with open("FlashCards.json", "w") as file:
