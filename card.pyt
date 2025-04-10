@@ -1,4 +1,5 @@
 import json
+import random
 mode = input("Would you like to enter Teacher or Student Mode?")
 #Teacher Mode
 """ class Teacher:
@@ -44,17 +45,38 @@ if mode == 'Student Mode':
     class Student:
         def __init__(self):
                 self.points = 0
-def flashcard_question(self, flashcard):
-    print(f'Flashcard:{flashcard["value"]}')
-    answer = input('Answer:')
-    if answer.lower() == flashcard["answer"].lower():
-        print('Correct, +1 point!')
-        self.points += 1
-    else:
-        print(f'Incorrect, the correct answer was {flashcard["value"]}')
+                self.streak = 0
 
-try:
-    with open("Flashcards.json", "r") as file:
-        flashcards_list = json.load(file)
-except (FileNotFoundError, json.JSONDecodeError):
-    flashcards_list = []
+        def flashcard_question(self, flashcard):
+            print(f'Flashcard:{flashcard["value"]}')
+            answer = input('Answer:')
+
+            if answer.lower() == flashcard["answer"].lower():
+                print("Correct, +1 point!")
+                self.streak += 1
+                self.points += 1
+                base_points = 1
+
+                if self.streak%3 == 0:
+                    streak_bonus = 1
+                    print("3 correct in a row! +1 point!")
+                    self.points = self.points + streak_bonus
+                    print('Correct, +1 point!')
+            else:
+                print(f'Incorrect, the correct answer was {flashcard["value"]}')
+                self.streak = 0
+
+    player = Student()
+
+    try:
+        with open("Flashcards.json", "r") as file:
+            flashcards_list = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        flashcards_list = []
+
+    random.shuffle(flashcards_list)
+
+    for flashcard in flashcards_list:
+        player.flashcard_question(flashcard)
+
+    print(f"You finished with {player.points} points!")
