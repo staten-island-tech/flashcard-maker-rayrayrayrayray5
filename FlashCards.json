@@ -42,5 +42,13 @@
     {
         "value": "j",
         "answer": "k"
+    },
+    {
+        "value": "k",
+        "answer": "l"
+    },
+    {
+        "value": "& C:/Python312/python.exe c:/Users/raymond.lin24/Documents/GitHub/flashcard-maker-rayrayrayrayray5/card.pyt",
+        "answer": "& C:/Python312/python.exe c:/Users/raymond.lin24/Documents/GitHub/flashcard-maker-rayrayrayrayray5/card.pyt"
     }
 ]
