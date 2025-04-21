@@ -18,37 +18,5 @@
     {
         "value": "e",
         "answer": "f"
-    },
-    {
-        "value": "f",
-        "answer": "g"
-    },
-    {
-        "value": "g",
-        "answer": "h"
-    },
-    {
-        "value": "h",
-        "answer": "i"
-    },
-    {
-        "value": "i",
-        "answer": "j"
-    },
-    {
-        "value": "j",
-        "answer": "k"
-    },
-    {
-        "value": "j",
-        "answer": "k"
-    },
-    {
-        "value": "k",
-        "answer": "l"
-    },
-    {
-        "value": "& C:/Python312/python.exe c:/Users/raymond.lin24/Documents/GitHub/flashcard-maker-rayrayrayrayray5/card.pyt",
-        "answer": "& C:/Python312/python.exe c:/Users/raymond.lin24/Documents/GitHub/flashcard-maker-rayrayrayrayray5/card.pyt"
     }
 ]

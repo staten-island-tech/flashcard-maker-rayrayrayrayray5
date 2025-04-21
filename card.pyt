@@ -11,9 +11,8 @@ class Teacher:
         def to_dict(self):
             return{"value": self.value, "answer": self.answer,}
 flashcards_data = []
-
-while True:
-    if mode == 'Teacher Mode':
+if mode == 'Teacher Mode':
+    while True:
         value = input('Input a word/phrase:')
         answer = input('Input the answer:')
         flashcards = Teacher.FlashCard(value, answer)
@@ -69,7 +68,7 @@ if mode == 'Student Mode':
     player = Student()
 
     try:
-        with open("Flashcards.json", "r") as file:
+        with open("FlashCards.json", "r") as file:
             flashcards_list = json.load(file)
     except (FileNotFoundError, json.JSONDecodeError):
         flashcards_list = []
